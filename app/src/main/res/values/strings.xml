@@ -17,4 +17,5 @@
     <string name="animal_shelter">Карта приютов и организаций</string>
     <string name="sos">Я нашел бездомное животное/SOS</string>
     <string name="faq">Центр поддержки пользователей/FAQ</string>
+    <string name="search">Поиск</string>
 </resources>
