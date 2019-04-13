@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GladPet</string>
+    <string name="title_home">Приюты</string>
+    <string name="title_favorite">Любимое</string>
+    <string name="title_adopte">Пристроить</string>
+    <string name="title_help">Помочь</string>
+    <string name="title_chat">Чат</string>
+    <string name="favourite">Избранное</string>
+    <string name="info">Полезное инфо</string>
+    <string name="map">Карта</string>
+    <string name="message">Сообщения</string>
+    <string name="organisation">Организация</string>
+    <string name="pets">Питомцы</string>
+    <string name="public_adopte">Публичная страница приюта</string>
+    <string name="user">Пользователь</string>
+    <string name="menu">Меню</string>
+    <string name="animal_shelter">Карта приютов и организаций</string>
+    <string name="sos">Я нашел бездомное животное/SOS</string>
+    <string name="faq">Центр поддержки пользователей/FAQ</string>
+</resources>
