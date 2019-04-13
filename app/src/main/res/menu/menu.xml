@@ -4,23 +4,25 @@
 
     <item
         android:id="@+id/action_search"
-        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
         android:title="@string/menu"
-        android:icon="@android:drawable/ic_menu_sort_by_size"/>
-    <item
-        android:id="@+id/action_map"
-        app:showAsAction="never"
-        android:title="@string/animal_shelter"
-        android:icon="@android:drawable/ic_dialog_map"/>
-    <item
-        android:id="@+id/action_sos"
-        app:showAsAction="never"
-        android:title="@string/sos"
-        android:icon="@android:drawable/ic_dialog_alert"/>
-    <item
-        android:id="@+id/action_faq"
-        app:showAsAction="never"
-        android:title="@string/faq"
-        android:icon="@android:drawable/sym_action_chat"/>
-
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_map"
+                android:icon="@android:drawable/ic_dialog_map"
+                android:title="@string/animal_shelter"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_sos"
+                android:icon="@android:drawable/ic_dialog_alert"
+                android:title="@string/sos"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_faq"
+                android:icon="@android:drawable/sym_action_chat"
+                android:title="@string/faq"
+                app:showAsAction="never" />
+        </menu>
+    </item>
 </menu>

@@ -54,9 +54,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @SuppressLint("RestrictedApi")
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (menu instanceof MenuBuilder) {
-            ((MenuBuilder) menu).setOptionalIconsVisible(true);
-        }
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
