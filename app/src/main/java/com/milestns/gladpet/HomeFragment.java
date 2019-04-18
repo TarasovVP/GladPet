@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
                         listPets = response.body();
                         recyclerView = (RecyclerView) rootView.findViewById( R.id.recycle_view );
                         adapter = new RecycleViewAdapter( getContext(), listPets);
-                        final GridLayoutManager layoutManager = new GridLayoutManager( getActivity(), 1, GridLayoutManager.HORIZONTAL, false );
+                        final GridLayoutManager layoutManager = new GridLayoutManager( getActivity(), 2, GridLayoutManager.VERTICAL, false );
                         recyclerView.setLayoutManager( layoutManager );
                         recyclerView.setAdapter( adapter );
                     }

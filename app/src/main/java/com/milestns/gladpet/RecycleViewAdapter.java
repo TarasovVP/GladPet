@@ -50,15 +50,6 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                 @Override
                 public void onClick(View view) {
                     int itemPosition = getLayoutPosition();
-                    Intent intent = new Intent(mContext, HomeFragment.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    Bundle extras = new Bundle();
-
-
-                    extras.putSerializable("list", (Serializable) petsList);
-
-                    intent.putExtras(extras);
-                    mContext.startActivity(intent);
                 }
             });
         }
