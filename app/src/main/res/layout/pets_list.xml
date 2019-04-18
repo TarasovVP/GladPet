@@ -13,11 +13,8 @@
         android:orientation="vertical">
 
 
-        <ImageView
-            android:id="@+id/avatar"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:scaleType="centerCrop" />
+        <include layout="@layout/like_image" />
+
 
         <TextView
             android:id="@+id/name"

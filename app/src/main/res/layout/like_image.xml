@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:scaleType="centerCrop"/>
+
+    <CheckBox
+        android:id="@+id/likeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/avatar"
+        android:background="@drawable/like_icon"
+        android:button="@null"
+        android:checked="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/scale"/>
+
+</RelativeLayout>
