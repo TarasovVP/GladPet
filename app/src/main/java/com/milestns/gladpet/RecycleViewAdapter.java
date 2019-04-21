@@ -69,7 +69,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         holder.name.setText(name);
         String email = petsList.get(position).getLocation();
         holder.city.setText(email);
-        String intro = petsList.get(position).getSex() + ", " + petsList.get(position).getAge() + ", " + petsList.get(position).getSize();
+        String intro = petsList.get(position).getAge();
         holder.intro.setText(intro);
         Picasso.with(context).load(getAvatars(position)).into(holder.avatar );
     }

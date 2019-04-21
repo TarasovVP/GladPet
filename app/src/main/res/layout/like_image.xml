@@ -5,8 +5,8 @@
 
     <ImageView
         android:id="@+id/avatar"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_width="165dp"
+        android:layout_height="84dp"
         android:scaleType="centerCrop"/>
 
     <CheckBox
