@@ -7,6 +7,8 @@ import android.net.NetworkInfo;
 
 public class MainApplication extends Application {
 
+    final static String BASE_URL = "https://gladpet.org";
+
     @Override
     public void onCreate() {
         super.onCreate();

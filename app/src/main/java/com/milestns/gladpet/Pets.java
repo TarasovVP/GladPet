@@ -2,19 +2,43 @@ package com.milestns.gladpet;
 
 import com.google.gson.annotations.SerializedName;
 
+
 import java.io.Serializable;
+
 
 public class Pets implements Serializable {
 
+    @SerializedName("id")
+    private int id;
+    @SerializedName("avatar")
+    private String avatar;
     @SerializedName("name")
     private String name;
+    @SerializedName("city_str")
+    private String location;
+    @SerializedName("age_str")
+    private String age;
+    @SerializedName("sex_str")
+    private String sex;
+    @SerializedName("size_str")
+    private String size;
 
 
-    @SerializedName("email")
-    private String email;
+    public int getId() {
+        return id;
+    }
 
-    @SerializedName("website")
-    private String website;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
 
     public String getName() {
         return name;
@@ -24,20 +48,42 @@ public class Pets implements Serializable {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLocation() {
+        return location;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getWebsite() {
-        return website;
+    public String getAge() {
+        return age;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
+    public void setAge(String age) {
+        this.age = age;
     }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+
+
+
+
+
 
 }

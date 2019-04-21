@@ -18,5 +18,6 @@
     <string name="sos">Я нашел бездомное животное/SOS</string>
     <string name="faq">Центр поддержки пользователей/FAQ</string>
     <string name="search">Поиск</string>
-    <string name="url_base">https://jsonplaceholder.typicode.com</string>
+    <string name="url_base">https://gladpet.org</string>
+    <string name="error">Произошла ошибка</string>
 </resources>

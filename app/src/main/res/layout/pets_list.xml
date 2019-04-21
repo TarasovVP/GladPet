@@ -34,7 +34,7 @@
 
 
         <TextView
-            android:id="@+id/male_age_growth"
+            android:id="@+id/intro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorAccent"
