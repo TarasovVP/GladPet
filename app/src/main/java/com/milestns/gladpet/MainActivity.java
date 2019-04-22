@@ -1,27 +1,44 @@
 package com.milestns.gladpet;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
+    List<Pets> listPets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loadFragment(new HomeFragment());
+        Intent intent = getIntent();
+        Bundle extras = intent.getBundleExtra("bundle");
+        if (extras != null) {
+            listPets =  extras.getParcelableArrayList("listPets");        }
 
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("listPets", (ArrayList<Pets>) listPets);
+        Fragment homeFragment = new HomeFragment();
+        homeFragment.setArguments(bundle);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, homeFragment).addToBackStack(null).commit();
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

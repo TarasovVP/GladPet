@@ -1,12 +1,13 @@
 package com.milestns.gladpet;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 
-import java.io.Serializable;
 
-
-public class Pets implements Serializable {
+public class Pets implements Parcelable {
 
     @SerializedName("id")
     private int id;
@@ -81,9 +82,45 @@ public class Pets implements Serializable {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
 
 
+    protected Pets(Parcel in) {
+        id = in.readInt();
+        avatar = in.readString();
+        name = in.readString();
+        location = in.readString();
+        age = in.readString();
+        sex = in.readString();
+        size = in.readString();
+    }
 
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(avatar);
+        dest.writeString(name);
+        dest.writeString(location);
+        dest.writeString(age);
+        dest.writeString(sex);
+        dest.writeString(size);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Pets> CREATOR = new Parcelable.Creator<Pets>() {
+        @Override
+        public Pets createFromParcel(Parcel in) {
+            return new Pets(in);
+        }
+
+        @Override
+        public Pets[] newArray(int size) {
+            return new Pets[size];
+        }
+    };
 }

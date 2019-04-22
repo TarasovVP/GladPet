@@ -19,7 +19,7 @@
             android:id="@+id/avatarMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars[3]" />
+            android:src="@drawable/vector" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -153,7 +153,7 @@
                     android:src="@drawable/ic_place_white_24dp"/>
                 <TextView
                     android:id="@+id/chipMain"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Микрочип"
                     android:textSize="13sp"
@@ -165,7 +165,7 @@
                     android:src="@drawable/ic_place_white_24dp"/>
                 <TextView
                     android:id="@+id/vaccinateMain"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Привит"
                     android:textSize="13sp"
@@ -177,7 +177,7 @@
                     android:src="@drawable/ic_place_white_24dp"/>
                 <TextView
                     android:id="@+id/swallowedMain"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Проглистован"
                     android:textSize="13sp"
@@ -275,7 +275,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars[3]" />
+                android:src="@drawable/vector"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -305,7 +305,7 @@
                     android:id="@+id/phonedMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Бритнаская короткошерстная кошка"
+                    android:text="+38 063 1871812"
                     android:textSize="13sp"
                     android:textColor="@color/text"
                     android:textAlignment="textStart"/>
@@ -325,7 +325,7 @@
                     android:id="@+id/mailMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Бритнаская короткошерстная кошка"
+                    android:text="vptarasov1998@gmail.com"
                     android:textSize="13sp"
                     android:textColor="@color/text"
                     android:textAlignment="textStart"/>
@@ -345,7 +345,7 @@
                     android:id="@+id/viberMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Бритнаская короткошерстная кошка"
+                    android:text="tarasovvp"
                     android:textSize="13sp"
                     android:textColor="@color/text"
                     android:textAlignment="textStart"/>
@@ -365,7 +365,7 @@
                     android:id="@+id/addressMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Бритнаская короткошерстная кошка"
+                    android:text="Dnipro"
                     android:textSize="13sp"
                     android:textColor="@color/text"
                     android:textAlignment="textStart"/>
