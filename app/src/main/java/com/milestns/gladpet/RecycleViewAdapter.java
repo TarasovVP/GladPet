@@ -30,8 +30,8 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         TextView name;
         @BindView(R.id.city)
         TextView city;
-        @BindView(R.id.intro)
-        TextView intro;
+        @BindView(R.id.age)
+        TextView age;
         @BindView(R.id.avatar)
         ImageView avatar;
 
@@ -67,10 +67,10 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         Context context = holder.itemView.getContext();
         String name = petsList.get(position).getName();
         holder.name.setText(name);
-        String email = petsList.get(position).getLocation();
-        holder.city.setText(email);
-        String intro = petsList.get(position).getAge();
-        holder.intro.setText(intro);
+        String city = petsList.get(position).getLocation();
+        holder.city.setText(city);
+        String age = petsList.get(position).getAge();
+        holder.age.setText(age);
         Picasso.with(context).load(getAvatars(position)).into(holder.avatar );
     }
 
