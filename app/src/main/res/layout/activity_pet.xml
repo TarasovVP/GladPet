@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PetFragment">
-
+    tools:context=".ui.fragment.PetFragment">
 
     <LinearLayout
-        android:layout_width="395dp"
-        android:layout_height="643dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:ignore="MissingConstraints">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/avatarMain"
+            android:id="@+id/avatarPet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/vector" />
@@ -25,351 +20,399 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
-                android:id="@+id/nameMain"
+                android:id="@+id/namePet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Без имени"
-                android:textSize="16sp"
+                android:textAlignment="textStart"
                 android:textColor="@color/colorTextName"
-                android:textStyle="bold"
-                android:textAlignment="textStart"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="3dp"
-                android:layout_marginBottom="6dp">
+                android:layout_marginBottom="6dp"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="14dp"
                     android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:src="@drawable/ic_place_white_24dp" />
+
                 <TextView
-                    android:id="@+id/shelterMain"
+                    android:id="@+id/shelterPet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Приют: "
-                    android:textSize="13sp"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
+                    android:textSize="13sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="3dp"
-                android:layout_marginBottom="6dp">
+                android:layout_marginBottom="6dp"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="14dp"
                     android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:src="@drawable/ic_place_white_24dp" />
+
                 <TextView
-                    android:id="@+id/cityMain"
+                    android:id="@+id/cityPet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Зверов, Киевская обл."
-                    android:textSize="13sp"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
+                    android:textSize="13sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="3dp"
-                android:layout_marginBottom="6dp">
+                android:layout_marginBottom="6dp"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="14dp"
                     android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:src="@drawable/ic_place_white_24dp" />
+
                 <TextView
-                    android:id="@+id/breedMain"
+                    android:id="@+id/breedPet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Бритнаская короткошерстная кошка"
-                    android:textSize="13sp"
+                    android:text="Британаская короткошерстная кошка"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="18dp"
-                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
-                android:layout_marginStart="10dp">
+                android:orientation="horizontal">
+
                 <ImageView
+                    android:id="@+id/sexPet"
                     android:layout_width="14dp"
                     android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:src="@drawable/ic_place_white_24dp" />
+
                 <TextView
-                    android:id="@+id/ageMain"
-                    android:layout_width="match_parent"
+                    android:id="@+id/sexTextPet"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7 мес"
-                    android:textSize="13sp"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
-                <ImageView
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:textSize="13sp" />
+
                 <TextView
-                    android:id="@+id/weightMain"
-                    android:layout_width="match_parent"
+                    android:id="@+id/agePet"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8 см"
-                    android:textSize="13sp"
+                    android:text="7 мес"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
+                    android:textSize="13sp" />
+
                 <ImageView
                     android:layout_width="14dp"
                     android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:src="@drawable/ic_place_white_24dp" />
+
                 <TextView
-                    android:id="@+id/heightMain"
-                    android:layout_width="match_parent"
+                    android:id="@+id/heightPet"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7 кг"
-                    android:textSize="13sp"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
-
-
+                    android:textSize="13sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="3dp"
-                android:layout_marginBottom="6dp">
+                android:layout_marginBottom="6dp"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="14dp"
                     android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:src="@drawable/ic_place_white_24dp" />
+
                 <TextView
-                    android:id="@+id/chipMain"
+                    android:id="@+id/chipPet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Микрочип"
-                    android:textSize="13sp"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
+                    android:textSize="13sp" />
+
                 <ImageView
                     android:layout_width="14dp"
                     android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:src="@drawable/ic_place_white_24dp" />
+
                 <TextView
-                    android:id="@+id/vaccinateMain"
+                    android:id="@+id/vaccinatePet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Привит"
-                    android:textSize="13sp"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
+                    android:textSize="13sp" />
+
                 <ImageView
                     android:layout_width="14dp"
                     android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
+                    android:src="@drawable/ic_place_white_24dp" />
+
                 <TextView
-                    android:id="@+id/swallowedMain"
+                    android:id="@+id/swallowedPet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Проглистован"
-                    android:textSize="13sp"
+                    android:textAlignment="textStart"
                     android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
+                    android:textSize="13sp" />
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/title2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/colorTextName"
-                android:textStyle="bold"
-                android:textAlignment="textStart"/>
-            <TextView
-                android:id="@+id/infoMain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Кот очень умный, добрый."
-                android:textSize="13sp"
-                android:textColor="@color/text"
-                android:textAlignment="textStart"/>
-            <TextView
-                android:id="@+id/characterMain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Характер"
-                android:textStyle="bold"
-                android:textSize="13sp"
-                android:textColor="@color/text"
-                android:textAlignment="textStart"/>
-            <TextView
-                android:id="@+id/characterMainInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ласковый, добрый"
-                android:textSize="13sp"
-                android:textColor="@color/text"
-                android:textAlignment="textStart"/>
-            <TextView
-                android:id="@+id/behaviorMain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Особенности поведения"
-                android:textStyle="bold"
-                android:textSize="13sp"
-                android:textColor="@color/text"
-                android:textAlignment="textStart"/>
-            <TextView
-                android:id="@+id/behaviorMainInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Кот не стерилизован, до сих пор иногда гуляет."
-                android:textSize="13sp"
-                android:textColor="@color/text"
-                android:textAlignment="textStart"/>
-            <TextView
-                android:id="@+id/wishMain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Характер"
-                android:textStyle="bold"
-                android:textSize="13sp"
-                android:textColor="@color/text"
-                android:textAlignment="textStart"/>
-            <TextView
-                android:id="@+id/wishMainInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="В заботливую семью"
-                android:textSize="13sp"
-                android:textColor="@color/text"
-                android:textAlignment="textStart"/>
 
-        </LinearLayout>
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/title3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Фото"
-                android:textSize="16sp"
-                android:textColor="@color/colorTextName"
-                android:textStyle="bold"
-                android:textAlignment="textStart"/>
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/vector"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/title4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Контакты"
-                android:textSize="16sp"
-                android:textColor="@color/colorTextName"
-                android:textStyle="bold"
-                android:textAlignment="textStart"/>
+            android:layout_height="match_parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="6dp">
-                <ImageView
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
-                <TextView
-                    android:id="@+id/phonedMain"
+                android:orientation="vertical">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="+38 063 1871812"
-                    android:textSize="13sp"
-                    android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="6dp">
-                <ImageView
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
-                <TextView
-                    android:id="@+id/mailMain"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Информация о животном"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorTextName"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/infoPet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Кот очень умный, добрый."
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Характер"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/characterPetInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ласковый, добрый"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Особенности поведения"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/behaviorPetInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Кот не стерилизован, до сих пор иногда гуляет."
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Пожелания по пристройству"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/wishPetInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="В заботливую семью"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="vptarasov1998@gmail.com"
-                    android:textSize="13sp"
-                    android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="6dp">
-                <ImageView
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
-                <TextView
-                    android:id="@+id/viberMain"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Фото"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorTextName"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/vector" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="tarasovvp"
-                    android:textSize="13sp"
-                    android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Контакты"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorTextName"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_place_white_24dp" />
+
+                        <TextView
+                            android:id="@+id/phonedPet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="+38 063 1871812"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/text"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_place_white_24dp" />
+
+                        <TextView
+                            android:id="@+id/mailPet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="vptarasov1998@gmail.com"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/text"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_place_white_24dp" />
+
+                        <TextView
+                            android:id="@+id/viberPet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="tarasovvp"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/text"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_place_white_24dp" />
+
+                        <TextView
+                            android:id="@+id/addressPet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dnipro"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/text"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="6dp">
-                <ImageView
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:src="@drawable/ic_place_white_24dp"/>
-                <TextView
-                    android:id="@+id/addressMain"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dnipro"
-                    android:textSize="13sp"
-                    android:textColor="@color/text"
-                    android:textAlignment="textStart"/>
-            </LinearLayout>
-        </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

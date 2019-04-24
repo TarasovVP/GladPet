@@ -5,6 +5,9 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.milestns.gladpet.api.ApiConfig;
+import com.milestns.gladpet.api.ApiNetworkService;
+
 public class MainApplication extends Application {
 
     final static String BASE_URL = "https://gladpet.org";

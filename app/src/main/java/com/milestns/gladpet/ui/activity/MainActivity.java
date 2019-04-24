@@ -1,4 +1,4 @@
-package com.milestns.gladpet;
+package com.milestns.gladpet.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -6,44 +6,54 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.milestns.gladpet.R;
+import com.milestns.gladpet.model.Pets;
+import com.milestns.gladpet.ui.fragment.FavouriteFragment;
+import com.milestns.gladpet.ui.fragment.HelpFragment;
+import com.milestns.gladpet.ui.fragment.HomeFragment;
+import com.milestns.gladpet.ui.fragment.InfoFragment;
+import com.milestns.gladpet.ui.fragment.MapFragment;
+import com.milestns.gladpet.ui.fragment.MessageFragment;
+import com.milestns.gladpet.ui.fragment.ShelterFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private Toolbar toolbar;
     List<Pets> listPets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView( R.layout.activity_main);
 
+        Toolbar toolbar = findViewById( R.id.toolbar );
+        setSupportActionBar( toolbar );
+
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(this);
         Intent intent = getIntent();
         Bundle extras = intent.getBundleExtra("bundle");
         if (extras != null) {
             listPets =  extras.getParcelableArrayList("listPets");        }
 
-        Bundle bundle = new Bundle();
-        bundle.putParcelableArrayList("listPets", (ArrayList<Pets>) listPets);
         Fragment homeFragment = new HomeFragment();
+        Bundle bundle = new Bundle();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        bundle.putParcelableArrayList("listPets", (ArrayList<Pets>) listPets);
         homeFragment.setArguments(bundle);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, homeFragment).addToBackStack(null).commit();
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.replace(R.id.fragment_container, homeFragment);
+        fragmentTransaction.commit();
 
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -68,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return loadFragment(fragment);
     }
-    @SuppressLint("RestrictedApi")
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);

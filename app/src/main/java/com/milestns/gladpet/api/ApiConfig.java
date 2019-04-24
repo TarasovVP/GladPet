@@ -1,4 +1,4 @@
-package com.milestns.gladpet;
+package com.milestns.gladpet.api;
 
 import android.content.Context;
 

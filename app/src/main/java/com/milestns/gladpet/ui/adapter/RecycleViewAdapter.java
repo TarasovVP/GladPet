@@ -1,9 +1,10 @@
-package com.milestns.gladpet;
+package com.milestns.gladpet.ui.adapter;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.milestns.gladpet.R;
+import com.milestns.gladpet.model.Pets;
+import com.milestns.gladpet.ui.fragment.PetFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,6 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
+
 
     private static List<Pets> petsList;
 
@@ -47,16 +52,23 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                 @Override
                 public void onClick(View view) {
                     int itemPosition = getLayoutPosition();
+                    Pets pet = petsList.get( itemPosition );
                     AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                    Fragment myFragment = new PetFragment();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
+                    Fragment petFragment = new PetFragment();
+                    Bundle bundle = new Bundle();
+                    FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager().beginTransaction();
+                    bundle.putParcelable("petsList", pet);
+                    petFragment.setArguments(bundle);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.replace(R.id.fragment_container, petFragment);
+                    fragmentTransaction.commit();
 
                 }
             });
         }
     }
 
-    RecycleViewAdapter(Context context, List<Pets> petsList) {
+    public RecycleViewAdapter(Context context, List<Pets> petsList) {
         this.mInflater = (LayoutInflater) LayoutInflater.from( context);
         RecycleViewAdapter.petsList = petsList;
     }
@@ -87,7 +99,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     }
 
     private String getAvatars(Integer id) {
-        String path = "https://gladpet.org/" + petsList.get(id).getAvatar(  );
+        String path =  petsList.get(id).getAvatar(  );
         return path;
     }
 }

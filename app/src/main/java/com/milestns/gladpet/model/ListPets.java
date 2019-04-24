@@ -1,4 +1,4 @@
-package com.milestns.gladpet;
+package com.milestns.gladpet.model;
 
 import com.google.gson.annotations.SerializedName;
 

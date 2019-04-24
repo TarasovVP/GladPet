@@ -1,4 +1,4 @@
-package com.milestns.gladpet;
+package com.milestns.gladpet.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
+import com.milestns.gladpet.R;
+import com.milestns.gladpet.model.Pets;
+import com.milestns.gladpet.ui.adapter.RecycleViewAdapter;
 
 import java.util.List;
 

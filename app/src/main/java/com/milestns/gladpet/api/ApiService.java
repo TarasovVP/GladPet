@@ -1,7 +1,7 @@
-package com.milestns.gladpet;
+package com.milestns.gladpet.api;
 
 
-import java.util.List;
+import com.milestns.gladpet.model.ListPets;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

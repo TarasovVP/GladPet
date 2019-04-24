@@ -1,18 +1,17 @@
-package com.milestns.gladpet;
+package com.milestns.gladpet.ui.activity;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
+import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import java.io.Serializable;
+import com.milestns.gladpet.R;
+import com.milestns.gladpet.api.ApiNetworkService;
+import com.milestns.gladpet.model.ListPets;
+import com.milestns.gladpet.model.Pets;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
 
                                 if (response.body() != null) {
                                     listPets = response.body().getListPets();
-                                    extras.putParcelableArrayList( "listPets", (ArrayList<Pets>) listPets );
+                                    extras.putParcelableArrayList( "listPets", (ArrayList<Pets>) getFirstEightPets( listPets ) );
                                     intent.putExtra( "bundle", extras );
                                     startActivity( intent );
                                     finish();
@@ -58,5 +57,11 @@ public class SplashActivity extends AppCompatActivity {
 
             }
         }, 3000);
+    }
+    public List<Pets>getFirstEightPets(List<Pets> firstPetsList){
+        List<Pets> firstPets = new ArrayList<>(  );
+        for (int i = 0; i < 8; i++) {
+            firstPets.add( firstPetsList.get( i ) );
+        }return firstPets;
     }
 }

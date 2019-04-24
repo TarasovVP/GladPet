@@ -12,20 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".FavouriteFragment" />
-        <activity android:name=".MessageFragment" />
-        <activity android:name=".InfoFragment" />
-        <activity android:name=".HomeFragment" />
-        <activity android:name=".UserActivity" />
-        <activity android:name=".PetFragment" />
-        <activity android:name=".OrganisationFragment" />
-        <activity android:name=".PublicAdopteFragment" />
-        <activity android:name=".MapFragment" />
-        <activity android:name=".HelpFragment" />
-        <activity android:name=".ShelterFragment" />
+        <activity android:name=".ui.activity.MainActivity"></activity>
+        <activity android:name=".ui.fragment.FavouriteFragment" />
+        <activity android:name=".ui.fragment.MessageFragment" />
+        <activity android:name=".ui.fragment.InfoFragment" />
+        <activity android:name=".ui.fragment.HomeFragment" />
+        <activity android:name=".ui.fragment.UserFragment" />
+        <activity android:name=".ui.fragment.PetFragment" />
+        <activity android:name=".ui.fragment.OrganisationFragment" />
+        <activity android:name=".ui.fragment.PublicAdopteFragment" />
+        <activity android:name=".ui.fragment.MapFragment" />
+        <activity android:name=".ui.fragment.HelpFragment" />
+        <activity android:name=".ui.fragment.ShelterFragment" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.activity.SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
