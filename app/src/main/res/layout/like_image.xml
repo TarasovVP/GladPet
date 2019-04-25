@@ -6,7 +6,8 @@
     <ImageView
         android:id="@+id/avatar"
         android:layout_width="165dp"
-        android:layout_height="84dp"
+        android:layout_height="120dp"
+        android:adjustViewBounds="true"
         android:scaleType="centerCrop"/>
 
     <CheckBox

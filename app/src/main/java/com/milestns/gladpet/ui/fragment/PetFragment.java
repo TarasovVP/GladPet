@@ -80,7 +80,7 @@ public class PetFragment extends Fragment {
             pet = args.getParcelable( "petsList" );
 
         }
-        Picasso.with(getContext()).load(pet.getAvatar()).into(avatarPet);
+        Picasso.with(getContext()).load("https://gladpet.org/" + pet.getAvatar()).into(avatarPet);
         namePet.setText( pet.getName() );
         cityPet.setText( pet.getLocation() );
         breedPet.setText( String.valueOf( pet.getBreed() ) );

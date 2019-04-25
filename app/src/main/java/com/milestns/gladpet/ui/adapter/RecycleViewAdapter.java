@@ -99,8 +99,14 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     }
 
     private String getAvatars(Integer id) {
+        String url = "http://gladpet.org";
+        String base_url = "https://gladpet.org";
         String path =  petsList.get(id).getAvatar(  );
-        return path;
+        if (!url.equalsIgnoreCase( path.substring( 0, 18 ) )){
+            return base_url + path;
+        }else {
+            return base_url + path.substring( 18 );
+        }
     }
 }
 
