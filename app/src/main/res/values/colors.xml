@@ -9,5 +9,6 @@
     <color name="colorRed">#D20404</color>
     <color name="text">#898989</color>
     <color name="text_bold">#4B4948</color>
+    <color name="splash">#FFFFFF</color>
 
 </resources>

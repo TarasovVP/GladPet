@@ -28,35 +28,30 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_splash );
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                ApiNetworkService.getService().loadPets()
-                        .enqueue(new Callback<ListPets>() {
-                            @Override
-                            public void onResponse(@NonNull Call<ListPets> call, @NonNull Response<ListPets> response) {
 
-                                Intent intent = new Intent( getApplicationContext(), MainActivity.class );
-                                Bundle extras = new Bundle();
+        ApiNetworkService.getService().loadPets()
+                .enqueue( new Callback<ListPets>() {
+                    @Override
+                    public void onResponse(@NonNull Call<ListPets> call, @NonNull Response<ListPets> response) {
 
-                                if (response.body() != null) {
-                                    listPets = response.body().getListPets();
-                                    extras.putParcelableArrayList( "listPets", (ArrayList<Pets>) getFirstEightPets( listPets ) );
-                                    intent.putExtra( "bundle", extras );
-                                    startActivity( intent );
-                                    finish();
+                        Intent intent = new Intent( getApplicationContext(), MainActivity.class );
+                        Bundle extras = new Bundle();
 
-                                }
-                            }
-                            @Override
-                            public void onFailure(@NonNull Call<ListPets> call, @NonNull Throwable t) {
-                                Toast.makeText(getApplicationContext(), R.string.error, Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        if (response.body() != null) {
+                            listPets = response.body().getListPets();
+                            extras.putParcelableArrayList( "listPets", (ArrayList<Pets>) getFirstEightPets( listPets ) );
+                            intent.putExtra( "bundle", extras );
+                            startActivity( intent );
+                            finish();
 
+                        }
+                    }
 
-            }
-        }, 3000);
+                    @Override
+                    public void onFailure(@NonNull Call<ListPets> call, @NonNull Throwable t) {
+                        Toast.makeText( getApplicationContext(), R.string.error, Toast.LENGTH_SHORT ).show();
+                    }
+                } );
     }
     public List<Pets>getFirstEightPets(List<Pets> firstPetsList){
         List<Pets> firstPets = new ArrayList<>(  );

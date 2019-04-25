@@ -36,9 +36,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         Toolbar toolbar = findViewById( R.id.toolbar );
         setSupportActionBar( toolbar );
+        getSupportActionBar().setTitle(null);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+
         Intent intent = getIntent();
         Bundle extras = intent.getBundleExtra("bundle");
         if (extras != null) {
