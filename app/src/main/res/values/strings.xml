@@ -21,4 +21,5 @@
     <string name="url_base">https://gladpet.org</string>
     <string name="error">Произошла ошибка</string>
     <string name="splash_screen">Picture for SplashActivity</string>
+    <string name="search_home">В поисках дома</string>
 </resources>

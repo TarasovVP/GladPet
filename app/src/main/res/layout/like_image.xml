@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:layout_marginStart="3dp"
+    android:layout_marginTop="3dp">
 
     <ImageView
         android:id="@+id/avatar"
-        android:layout_width="165dp"
-        android:layout_height="120dp"
+        android:layout_width="160dp"
+        android:layout_height="110dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop" />
 
     <CheckBox
         android:id="@+id/likeIcon"
@@ -17,6 +19,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/avatar"
         android:background="@drawable/like_icon"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
         android:button="@null"
         android:checked="false"
         android:clickable="true"

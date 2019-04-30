@@ -40,6 +40,5 @@ public class ApiNetworkService {
                 .build();
 
         service = retrofit.create(ApiService.class);
-
     }
 }

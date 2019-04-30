@@ -50,8 +50,8 @@ public class PetFragment extends Fragment {
     TextView behaviorPetInfo;
     @BindView(R.id.wishPetInfo)
     TextView wishPetInfo;
-    @BindView(R.id.imageView2)
-    ImageView imageView2;
+    @BindView(R.id.allPhotos)
+    ImageView allPhotos;
     @BindView(R.id.phonedPet)
     TextView phonedPet;
     @BindView(R.id.mailPet)
@@ -80,7 +80,7 @@ public class PetFragment extends Fragment {
             pet = args.getParcelable( "petsList" );
 
         }
-        Picasso.with(getContext()).load("https://gladpet.org/" + pet.getAvatar()).into(avatarPet);
+        Picasso.with(getContext()).load(pet.getAvatarUrl()).into(avatarPet);
         namePet.setText( pet.getName() );
         cityPet.setText( pet.getLocation() );
         breedPet.setText( String.valueOf( pet.getBreed() ) );
@@ -97,6 +97,8 @@ public class PetFragment extends Fragment {
         characterPetInfo.setText( pet.getNature() );
         behaviorPetInfo.setText( pet.getBehavior() );
         wishPetInfo.setText( pet.getWishes() );
+
+        Picasso.with(getContext()).load(pet.getAvatarUrl()).into(allPhotos);
 
         phonedPet.setText( pet.getName() );
         mailPet.setText( pet.getName() );

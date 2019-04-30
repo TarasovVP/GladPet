@@ -61,7 +61,7 @@ public class Pets implements Parcelable {
     }
 
     public String getName() {
-        return name;
+        return name.substring(0, 1).toUpperCase() + name.substring(1);
     }
 
     public void setName(String name) {
@@ -238,4 +238,15 @@ public class Pets implements Parcelable {
             return new Pets[size];
         }
     };
+
+    public String getAvatarUrl() {
+        String url = "http://gladpet.org";
+        String base_url = "https://gladpet.org";
+        String path =  getAvatar(  );
+        if (!url.equalsIgnoreCase( path.substring( 0, 18 ) )){
+            return base_url + path;
+        }else {
+            return base_url + path.substring( 18 );
+        }
+    }
 }
