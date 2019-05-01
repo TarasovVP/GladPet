@@ -22,4 +22,25 @@
     <string name="error">Произошла ошибка</string>
     <string name="splash_screen">Picture for SplashActivity</string>
     <string name="search_home">В поисках дома</string>
+    <string name="pet_name">Без имени</string>
+    <string name="shelter">Приют:</string>
+    <string name="city_pet">Зверов, Киевская обл.</string>
+    <string name="breed_pet">Британаская короткошерстная кошка</string>
+    <string name="age_pet">7 мес</string>
+    <string name="height_pet">8 см</string>
+    <string name="weight_pet">7 кг</string>
+    <string name="info_title_pet">Информация о животном</string>
+    <string name="info_pet">Кот очень умный, добрый.</string>
+    <string name="character_pet">Характер</string>
+    <string name="behavior_pet">Особенности поведения</string>
+    <string name="character_pet_info">Ласковый, добрый</string>
+    <string name="behavior_pet_info">Кот не стерилизован, до сих пор иногда гуляет.</string>
+    <string name="wish_pet">Пожелания по пристройству</string>
+    <string name="wish_pet_info">В заботливую семью</string>
+    <string name="photos_pet">Фото</string>
+    <string name="contacts">Контакты</string>
+    <string name="phone">+38 063 1871812</string>
+    <string name="email_pet">vptarasov1998@gmail.com</string>
+    <string name="viber_pet">tarasovvp</string>
+    <string name="address_pet">Dnipro</string>
 </resources>
