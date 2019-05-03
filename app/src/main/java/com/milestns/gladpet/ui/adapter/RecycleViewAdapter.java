@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.milestns.gladpet.R;
@@ -44,6 +45,18 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         TextView age;
         @BindView(R.id.avatar)
         ImageView avatar;
+        @BindView(R.id.sexPetMale)
+        ImageView sexPetMale;
+        @BindView(R.id.sexPetFemale)
+        ImageView sexPetFemale;
+        @BindView(R.id.sterialisedPet)
+        LinearLayout sterialisedPet;
+        @BindView(R.id.vaccinatedPet)
+        LinearLayout vaccinatedPet;
+        @BindView(R.id.underProtectedPet)
+        TextView underProtectedPet;
+        @BindView(R.id.featuredPet)
+        TextView featuredPet;
 
         ViewHolder(View itemView) {
             super( itemView );
@@ -93,6 +106,24 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         String age = petsList.get( position ).getAge();
         holder.age.setText( age );
         Picasso.with( context ).load( petsList.get( position ).getAvatarUrl() ).into( holder.avatar );
+
+        if (petsList.get( position ).getSex().equalsIgnoreCase( "Мальчик" )) {
+            holder.sexPetMale.setVisibility( View.VISIBLE );
+        }else if(petsList.get( position ).getSex().equalsIgnoreCase( "Девочка" )){
+            holder.sexPetFemale.setVisibility( View.VISIBLE );
+        }
+        if (petsList.get( position ).isSterilized()) {
+            holder.sterialisedPet.setVisibility( View.VISIBLE );
+        }
+        if (petsList.get( position ).isVaccinated()) {
+            holder.vaccinatedPet.setVisibility( View.VISIBLE );
+        }
+        if (petsList.get( position ).isUnderProtection()) {
+            holder.underProtectedPet.setVisibility( View.VISIBLE );
+        }
+        if (petsList.get( position ).isFeatured()) {
+            holder.featuredPet.setVisibility( View.VISIBLE );
+        }
 
     }
 

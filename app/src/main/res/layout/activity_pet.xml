@@ -12,22 +12,40 @@
         android:orientation="vertical"
         android:padding="5dp">
 
-        <ImageView
-            android:id="@+id/avatarPet"
-            android:layout_width="match_parent"
-            android:layout_height="166dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/vector" />
+        <include layout="@layout/pet_image">
+
+        </include>
+
+        <ImageButton
+            android:id="@+id/callPet"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="115dp"
+            android:background="@drawable/rounded_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@android:drawable/ic_menu_call" />
+
+        <ImageButton
+            android:id="@+id/chatPet"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginTop="-45dp"
+            android:layout_marginEnd="65dp"
+            android:background="@drawable/rounded_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@android:drawable/sym_action_chat" />
 
         <CheckBox
             android:id="@+id/favoriteIconPet"
             android:layout_width="44dp"
             android:layout_height="44dp"
             android:layout_gravity="end|bottom"
-            android:layout_marginTop="-25dp"
+            android:layout_marginTop="-45dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/rounded_button"
             android:button="@null"
@@ -36,7 +54,6 @@
             android:foreground="@drawable/favorite_icon"
             android:foregroundGravity="center"
             android:src="@drawable/favorite_icon" />
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,8 +81,8 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/vector"
-                    android:layout_marginEnd="5dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/vector" />
 
                 <TextView
                     android:id="@+id/shelterPet"
@@ -86,7 +103,7 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginEnd="10dp"
                     android:src="@drawable/ic_place_white_24dp" />
 
                 <TextView
@@ -108,8 +125,8 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_place_white_24dp" />
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/pet" />
 
                 <TextView
                     android:id="@+id/breedPet"
@@ -127,34 +144,45 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/sexPet"
+                    android:id="@+id/sexPetMale"
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_place_white_24dp" />
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/masculine"
+                    android:visibility="gone"/>
 
-                <TextView
-                    android:id="@+id/sexTextPet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="@string/age_pet"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/text"
-                    android:textSize="13sp" />
                 <ImageView
+                    android:id="@+id/sexPetFemale"
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_place_white_24dp" />
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/femenine"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/agePet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/age_pet"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/text"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/height" />
+
+                <TextView
+                    android:id="@+id/heightPet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
                     android:text="@string/height_pet"
                     android:textAlignment="textStart"
                     android:textColor="@color/text"
@@ -164,11 +192,11 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_place_white_24dp" />
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/weight" />
 
                 <TextView
-                    android:id="@+id/heightPet"
+                    android:id="@+id/weighttPet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/weight_pet"
@@ -182,55 +210,58 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_place_white_24dp" />
-
-                <TextView
-                    android:id="@+id/chipPet"
+                <LinearLayout
+                    android:id="@+id/vaccinatedPet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Микрочип"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/text"
-                    android:textSize="13sp" />
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_button"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone">
 
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_place_white_24dp" />
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/syringe" />
 
-                <TextView
-                    android:id="@+id/vaccinatePet"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/vaccinatedPet"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sterialisedPet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Привит"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/text"
-                    android:textSize="13sp" />
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_button"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone">
 
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_place_white_24dp" />
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/scissors" />
 
-                <TextView
-                    android:id="@+id/swallowedPet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Проглистован"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/text"
-                    android:textSize="13sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/sterialisedTextPet"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 
@@ -366,7 +397,7 @@
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:layout_gravity="center"
-                            android:layout_marginEnd="5dp"
+                            android:layout_marginEnd="10dp"
                             android:src="@android:drawable/ic_menu_call" />
 
                         <TextView
@@ -388,7 +419,7 @@
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:layout_gravity="center"
-                            android:layout_marginEnd="5dp"
+                            android:layout_marginEnd="10dp"
                             android:src="@android:drawable/ic_dialog_email" />
 
                         <TextView
@@ -410,7 +441,7 @@
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:layout_gravity="center"
-                            android:layout_marginEnd="5dp"
+                            android:layout_marginEnd="10dp"
                             android:src="@android:drawable/sym_action_chat" />
 
                         <TextView
@@ -433,7 +464,7 @@
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:layout_gravity="center"
-                            android:layout_marginEnd="5dp"
+                            android:layout_marginEnd="10dp"
                             android:src="@drawable/ic_home_white_24dp" />
 
                         <TextView

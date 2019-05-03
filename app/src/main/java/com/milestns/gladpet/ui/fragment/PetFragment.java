@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.milestns.gladpet.R;
@@ -28,22 +29,22 @@ public class PetFragment extends Fragment {
     TextView cityPet;
     @BindView(R.id.breedPet)
     TextView breedPet;
-    @BindView(R.id.sexPet)
-    ImageView sexPet;
     @BindView(R.id.agePet)
     TextView agePet;
-    @BindView(R.id.sexTextPet)
-    TextView sexTextPet;
+    @BindView(R.id.sexPetMale)
+    ImageView sexPetMale;
+    @BindView(R.id.sexPetFemale)
+    ImageView sexPetFemale;
     @BindView(R.id.heightPet)
     TextView heightPet;
-    @BindView(R.id.chipPet)
-    TextView chipPet;
-    @BindView(R.id.vaccinatePet)
-    TextView vaccinatePet;
-    @BindView(R.id.swallowedPet)
-    TextView swallowedPet;
-    @BindView(R.id.infoPet)
-    TextView infoPet;
+    @BindView(R.id.sterialisedPet)
+    LinearLayout sterialisedPet;
+    @BindView(R.id.vaccinatedPet)
+    LinearLayout vaccinatedPet;
+    @BindView(R.id.underProtectedPet)
+    TextView underProtectedPet;
+    @BindView(R.id.featuredPet)
+    TextView featuredPet;
     @BindView(R.id.characterPetInfo)
     TextView characterPetInfo;
     @BindView(R.id.behaviorPetInfo)
@@ -80,30 +81,38 @@ public class PetFragment extends Fragment {
             pet = args.getParcelable( "petsList" );
 
         }
-        Picasso.with(getContext()).load(pet.getAvatarUrl()).into(avatarPet);
+        Picasso.with( getContext() ).load( pet.getAvatarUrl() ).into( avatarPet );
         namePet.setText( pet.getName() );
         cityPet.setText( pet.getLocation() );
-        breedPet.setText( String.valueOf( pet.getBreed() ) );
 
-        sexTextPet.setText( pet.getName() );
+        if (pet.getSex().equalsIgnoreCase( "Мальчик" )) {
+            sexPetMale.setVisibility( View.VISIBLE );
+        }else if(pet.getSex().equalsIgnoreCase( "Девочка" )){
+            sexPetFemale.setVisibility( View.VISIBLE );
+        }
         agePet.setText( pet.getAge() );
         heightPet.setText( pet.getSize() );
 
-       /* chipPet.setText( pet.getName() );
-        vaccinatePet.setText( pet.getName() );
-        swallowedPet.setText( pet.getName() );
-*/
-        infoPet.setText( pet.getHistory() );
+        if (pet.isSterilized()) {
+            sterialisedPet.setVisibility( View.VISIBLE );
+        }
+        if (pet.isVaccinated()) {
+            vaccinatedPet.setVisibility( View.VISIBLE );
+        }
+        if (pet.isUnderProtection()) {
+            underProtectedPet.setVisibility( View.VISIBLE );
+        }
+        if (pet.isFeatured()) {
+            featuredPet.setVisibility( View.VISIBLE );
+        }
+
+
         characterPetInfo.setText( pet.getNature() );
         behaviorPetInfo.setText( pet.getBehavior() );
         wishPetInfo.setText( pet.getWishes() );
 
-        Picasso.with(getContext()).load(pet.getAvatarUrl()).into(allPhotos);
+        Picasso.with( getContext() ).load( pet.getAvatarUrl() ).into( allPhotos );
 
-        phonedPet.setText( pet.getName() );
-        mailPet.setText( pet.getName() );
-        viberPet.setText( pet.getName() );
-        addressPet.setText( pet.getName() );
     }
 
 }

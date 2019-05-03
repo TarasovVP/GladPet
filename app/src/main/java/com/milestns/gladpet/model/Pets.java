@@ -29,12 +29,18 @@ public class Pets implements Parcelable {
     private int organization;
     @SerializedName("breed")
     private int breed;
-    @SerializedName("callable")
-    private boolean callable;
+
     @SerializedName("sterilized")
     private boolean sterilized;
     @SerializedName("vaccinated")
     private boolean vaccinated;
+    @SerializedName("under_protection")
+    private boolean underProtection;
+    @SerializedName("featured")
+    private boolean featured;
+    @SerializedName("health")
+    private int health;
+
     @SerializedName("history")
     private String history;
     @SerializedName("nature")
@@ -124,14 +130,6 @@ public class Pets implements Parcelable {
         this.breed = breed;
     }
 
-    public boolean getCallable() {
-        return callable;
-    }
-
-    public void setCallable(boolean callable) {
-        this.callable = callable;
-    }
-
     public boolean isSterilized() {
         return sterilized;
     }
@@ -181,6 +179,30 @@ public class Pets implements Parcelable {
     }
 
 
+    public boolean isUnderProtection() {
+        return underProtection;
+    }
+
+    public void setUnderProtection(boolean underProtection) {
+        this.underProtection = underProtection;
+    }
+
+    public boolean isFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(boolean featured) {
+        this.featured = featured;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
 
     protected Pets(Parcel in) {
         id = in.readInt();
@@ -192,9 +214,12 @@ public class Pets implements Parcelable {
         size = in.readString();
         user_id = in.readInt();
         organization = in.readInt();
-        callable = in.readByte() != 0x00;
+        breed = in.readInt();
         sterilized = in.readByte() != 0x00;
         vaccinated = in.readByte() != 0x00;
+        underProtection = in.readByte() != 0x00;
+        featured = in.readByte() != 0x00;
+        health = in.readInt();
         history = in.readString();
         nature = in.readString();
         behavior = in.readString();
@@ -217,9 +242,12 @@ public class Pets implements Parcelable {
         dest.writeString(size);
         dest.writeInt(user_id);
         dest.writeInt(organization);
-        dest.writeByte((byte) (callable ? 0x01 : 0x00));
+        dest.writeInt(breed);
         dest.writeByte((byte) (sterilized ? 0x01 : 0x00));
         dest.writeByte((byte) (vaccinated ? 0x01 : 0x00));
+        dest.writeByte((byte) (underProtection ? 0x01 : 0x00));
+        dest.writeByte((byte) (featured ? 0x01 : 0x00));
+        dest.writeInt(health);
         dest.writeString(history);
         dest.writeString(nature);
         dest.writeString(behavior);

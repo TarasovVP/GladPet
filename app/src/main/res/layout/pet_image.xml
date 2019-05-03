@@ -6,21 +6,21 @@
     android:layout_marginTop="3dp">
 
     <ImageView
-        android:id="@+id/avatar"
-        android:layout_width="160dp"
-        android:layout_height="110dp"
+        android:id="@+id/avatarPet"
+        android:layout_width="match_parent"
+        android:layout_height="166dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/vector" />
 
     <TextView
         android:id="@+id/featuredPet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/featured"
+        android:padding="5dp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/avatar"
-        android:layout_marginTop="80dp"
-        android:padding="2dp"
+        android:layout_marginTop="20dp"
         android:textAlignment="textStart"
         android:background="@color/featured"
         android:textColor="@color/colorPrimary"
@@ -40,22 +40,5 @@
         android:textColor="@color/colorPrimary"
         android:textSize="13sp"
         android:visibility="gone"/>
-
-
-    <CheckBox
-        android:id="@+id/likeIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/avatar"
-        android:background="@drawable/like_icon"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:button="@null"
-        android:checked="false"
-        android:clickable="true"
-        android:focusable="true"
-        android:stateListAnimator="@animator/scale"/>
-
 
 </RelativeLayout>
