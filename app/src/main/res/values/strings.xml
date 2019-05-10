@@ -47,4 +47,14 @@
     <string name="vaccinatedPet">Привит</string>
     <string name="sterialisedTextPet">Стерилизован</string>
     <string name="under_protected">Под опекой</string>
+    <string name="no_name">Без имени</string>
+    <string name="id_pet">ID питомца:</string>
+    <string name="info_about_pet">Информация о питомце</string>
+    <string name="color">Окрас</string>
+    <string name="age">Возраст</string>
+    <string name="location">Локация</string>
+    <string name="add_photo">Добавить фото/видео</string>
+    <string name="description">Описание</string>
+    <string name="state">Состояние</string>
+    <string name="save">Сохранить</string>
 </resources>
